@@ -35,7 +35,7 @@ const fullName = async (code) => {
     let url = `https://restcountries.com/v3.1/alpha/${code}`;
     let resp = await fetch(url);
     let data = await resp.json();
-    let full = await fetch(data[0].name.common);
+    let full = await (data[0].name.common);
     return full;
 }
 
