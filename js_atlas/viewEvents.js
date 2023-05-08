@@ -3,7 +3,7 @@ export const declareEvents = (doApi) => {
     let btnSearch = document.querySelector("#btnSearch");
 
     for (let i = 1; i < 6; i++) {
-        let country = document.querySelector(`#${i}`);
+        let country = document.querySelector(`#id_${i}`);
         country.addEventListener("click", () => {
             doApi(country.innerHTML);
         })

@@ -1,9 +1,9 @@
-import { declareViewEvents } from "./viewEvents.js"
+import { declareEvents } from "./viewEvents.js"
 import countryClass from "./countryClass.js"
 
 const init = () => {
     doApi("israel")
-    declareViewEvents(doApi)
+    declareEvents(doApi)
 }
 const showLoading = () => {
     document.querySelector("#id_loading").style.display = "block";
@@ -17,11 +17,18 @@ const hideLoading = () => {
 const doApi = async (country) => {
     showLoading()
     let url = `https://restcountries.com/v3.1/name/${country}`
-    let resp = await fetch(url)
-    console.log(resp)
-    let data = await resp.json()
-    console.log(data);
-    displayCountry(data[0])
+    try{
+        let resp = await fetch(url)
+        console.log(resp)
+        let data = await resp.json()
+        console.log(data);
+        displayCountry(data[0])
+    } catch(e){
+        console.log(e);
+        document.querySelector("#id_parent").innerHTML=`
+        <div><h1>Country not found:( Please try again</h1></div>`
+    }
+   
 }
 
 const displayCountry = (countryData) => {
