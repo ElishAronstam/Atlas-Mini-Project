@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap link -->
     <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Pattaya&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- font awesome for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- leaflet-for the map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- favicon  -->
+    <link rel="icon" type="image/x-icon" href="favicon_io (4)/favicon.ico">
+    <!-- style css sheet -->
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
     <script defer type="module" src="js_atlas/appAtlas.js"></script>
-   
+
 </head>
+
 <body>
+
+
     <header class="container-fluid p-2">
-        <div class="container">
+        <div class="container my-3">
+
             <div class="row justify-content-around align-items-center">
-                <div class="col-auto p-0">
-                    <h2 class="display-5 mb-0">
-                        Map of The World
-                    </h2>
+                <div class="col-auto p-0 logo">
+                    <a id="id_home">
+                      <h2 class="display-6">
+                         <i class="fa fa-globe" aria-hidden="true"></i>
+                         Atlas
+                     </h2>
+                    </a>
                 </div>
+
                 <nav class="col-auto links p-0">
+                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1600">
                     <a id="id_1">France</a>
                     <a id="id_2">Israel</a>
                     <a id="id_3">Thailand</a>
-                    <a id="id_4">United Kingdom</a>
+                    <a id="id_4">UK</a>
                     <a id="id_5">USA</a>
-                </nav>
-                <div class="col-md-4 d-flex">
-                    <input id="id_input" placeholder="Search for any country" type="text" class="form-control">
-                    <button id="btnSearch" class="btn btn-dark">Search</button>
                 </div>
+            </nav>
+
+            <div class="col-md-4 d-flex">
+                <input id="id_input" placeholder="Enter any country" type="text" class="form-control">
+                <button id="btnSearch" class="btn btn-dark">Search</button>
             </div>
+        </div>
+
         </div>
     </header>
 
     <main class="container-fluid">
-        <div id="id_parent" class="container">
-            <!-- the country will be displayed here -->
+        <div class="container">
+            <div id="id_loading" class="loading text-center my-5">
+                <img src="images/loading.gif" alt="loading">
+                <p class="display-3 text-white my-5">Loading...</p>
+            </div>
+            
+            <div id="id_parent" class="container">
+                <!-- the country will be displayed here -->
+            </div>
         </div>
 
     </main>
-  
+
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="col-12 row justify-content-around text-center">
+                <div>
+                    <a href="https://www.facebook.com">
+                        <i class="px-3 my-4 fa fa-2x fa-facebook-square text-white" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com">
+                        <i class="px-3 my-4 fa fa-2x fa-linkedin-square text-white" aria-hidden="true"></i></a>
+                    <a href="https://github.com">
+                        <i class="px-3 my-4 fa fa-2x  fa-github text-white" aria-hidden="true"></i></a>
+                </div>
+                <p class="text-white-50 mb-3">
+                    &copy; Elisheva Sherman
+                </p>
+            </div>
+        </div>
+
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>

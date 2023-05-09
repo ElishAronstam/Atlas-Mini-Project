@@ -1,12 +1,21 @@
 export const declareEvents = (doApi) => {
     let id_input = document.querySelector("#id_input")
     let btnSearch = document.querySelector("#btnSearch");
+ 
 
     for (let i = 1; i < 6; i++) {
         let country = document.querySelector(`#id_${i}`);
-        country.addEventListener("click", () => {
-            doApi(country.innerHTML);
-        })
+        if(i==4){
+    
+            country.addEventListener("click", () => {
+                doApi("United Kingdom");
+            })
+        }
+        else{
+            country.addEventListener("click", () => {
+                doApi(country.innerHTML);
+            })
+        }
     }
 
     btnSearch.addEventListener("click", () => {
@@ -17,4 +26,6 @@ export const declareEvents = (doApi) => {
         if (e.key == 'Enter')
             doApi(id_input.value);
     })
+  
+
 }

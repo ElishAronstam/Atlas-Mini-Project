@@ -1,0 +1,72 @@
+h1,h2 {
+    font-family: 'Pattaya', sans-serif !important;
+}
+header{
+    background: none;
+    
+}
+main .container{
+    max-height: 800px;
+    margin-top: 5px;
+    background: none;
+}
+header .container .links a {
+    color: white;
+    padding:0 8px;
+    cursor: pointer;
+    font-family: 'Arima';
+    text-decoration: none;
+    display: inline-block;
+    transition: 1000ms;
+    font-size: 1.2em;
+}
+
+header .container .links a:hover {
+    transform: scale(1.2, 1.2);
+    color:rgb(165, 157, 42);
+
+}
+
+header .logo {
+    font-family: 'Arima';
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 900;
+
+}
+
+#map{
+    height:450px;
+    width:600px;    
+}
+
+.err h1,
+.err h2{
+    color:red;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/world.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+footer{
+    background: none;
+    color: white;
+    margin-top: auto;
+}
+main .singleCont{
+	border: 7px solid;
+	padding: 1rem;
+    border-image: linear-gradient(45deg, rgb(64, 88, 224), rgb(208, 209, 225)) 1;
+ }
+
+@media (max-width:768px) {
+    main {
+        background-attachment: scroll;
+    }
+}
