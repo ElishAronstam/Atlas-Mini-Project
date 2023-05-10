@@ -1,9 +1,9 @@
 import { declareEvents } from "./viewEvents.js"
 import Country from "./countryClass.js"
+import {errorMsg,homePage}  from "./countryManager.js"
 
 const init = () => {
-
-    doApi("israel")
+    doApi()
     declareEvents(doApi)
 }
 const showLoading = () => {
@@ -15,29 +15,27 @@ const hideLoading = () => {
     document.querySelector("#id_loading").style.display = "none";
     document.querySelector("#id_parent").style.display = "flex";
 }
-const doApi = async (country) => {
-    showLoading()
-    let url = (`https://restcountries.com/v3.1/name/${country}`)
-    try {
-        let resp = await fetch(url)
-        console.log(resp)
-        let data = await resp.json()
-        console.log(data);
-        displayCountry(data[0])
-    } catch (e) {
-        console.log(e);
-
-        document.querySelector("#id_parent").innerHTML =
-         `
-        <div class="container err">
-            <div class="col-12 row align-items-center text-center ">
-            <h1 class="display-4  mt-5">Oops,</h1>
-              <h1 class="display-4 ">Couldnt find the country you are looking for</h1>
-              <h2 class="display-5 ">Please try again</h2>
-            </div>
-        </div>
-        `
+const doApi = async (country="home") => {
+    if(country=="home"){
+        hideLoading()
+        console.log("home")
+        homePage()
+    } else {
+        showLoading()
+        let url = (`https://restcountries.com/v3.1/name/${country}`)
+        try {
+            let resp = await fetch(url)
+            console.log(resp)
+            let data = await resp.json()
+            console.log(data);
+            displayCountry(data[0])
+        } catch (e) {
+            console.log(e);
+            errorMsg()
+           
+        }
     }
+    
 
 }
 
