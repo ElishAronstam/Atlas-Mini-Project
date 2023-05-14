@@ -5,8 +5,13 @@ header{
     background: none;
     
 }
+
+header .btn:hover{
+background-color: white;
+color:black;
+}
 main .container{
-    max-height: 800px;
+    min-height: 400px;
     margin-top: 5px;
     background: none;
 }
@@ -17,6 +22,25 @@ header .logo a{
     font-family: 'Arima';
     font-size: 2em;
     font-weight: 900;
+   
+}
+
+header .burger {
+    cursor: pointer;
+    font-size: 2em;
+    color:rgb(233, 233, 174);
+    position: absolute;
+    z-index: 100;
+    
+}
+
+header .close {
+    cursor: pointer;
+    font-size: 2em;
+    color:rgb(233, 233, 174);
+    position: absolute;
+    z-index: 100;
+   
 }
 
 header .container .links a {
@@ -39,7 +63,8 @@ header .container .links a:hover {
 
 #map{
     height:450px;
-    width:600px;    
+    width:600px;  
+   
 }
 
 .err h1,
@@ -92,8 +117,8 @@ main .singleCont{
     border-image: linear-gradient(45deg, rgb(64, 88, 224), rgb(208, 209, 225)) 1;
  }
 
-@media (max-width:768px) {
-    main {
-        background-attachment: scroll;
-    }
+#id_select_country{
+  display:none;
 }
+
+ 

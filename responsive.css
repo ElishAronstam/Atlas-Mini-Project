@@ -1,0 +1,39 @@
+@media (max-width:991px) {
+    header{
+       background: rgba(252, 251, 251, 0.235);
+       /* min-height: 300px; */
+    }
+   
+   
+       header .container .links {
+           display: none;
+           position: absolute;
+           top:110px;
+           right: 0;
+           /* background: white; */
+           z-index: 99;
+           width: 100%!important;
+           box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+   
+       }
+   
+       header .container .links a  {
+           display: block;
+           color: black;
+           padding-bottom: 10px;
+           animation: none !important;
+           transition: none !important;
+           transform: none!important;
+   
+       }
+   
+   
+       header .close{
+           display:none;
+       }
+       #map{
+           width: 382px!important;
+       }
+   
+      
+   }
