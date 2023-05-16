@@ -18,12 +18,14 @@ export default class Country {
         
 
     }
-    render(fullName, doApi) {
+    async render(fullName, doApi) {
         let div = document.createElement("div");
         div.className = "singleCont col-md-8 mx-auto p-4 overflow-hidden bg-white";
         document.querySelector(this.parent).append(div);
         div.innerHTML += `
-        <img src="${this.flag}" alt="${this.name}" class="col-6 float-end ms-4" height="250">
+        <div class="col-6 float-end ms-4" style="width:250;height:250">
+          <img src="${this.flag}" alt="${this.name}" style="width:100%;height:100%">
+        </div>
         <h2>${this.name}</h2>
         <div>Population: ${this.pop} </div>
         <div>Region: ${this.region}</div>
@@ -58,13 +60,11 @@ export default class Country {
         if(this.borders!="none"){
             this.borders.sort();
             console.log(this.borders)
-            this.borders.forEach(async (item, i) => {
-            console.log("before "+item);
+            for(let i=0;i<this.borders.length;i++){
             let span = document.createElement("span");
             let space = document.createElement("span");
-            let full = await (fullName(item));
-            // span.innerHTML=item
-            console.log("after "+full)
+            let full = await (fullName(this.borders[i]));
+        
             span.innerHTML=full;
             if(i<(this.borders.length-1)){
                 space.innerHTML = ", "
@@ -79,7 +79,7 @@ export default class Country {
             span.addEventListener("click", () => {//presses on country that borders so diaplay that country
                 doApi(span.innerHTML);
             })
-        })
+          }
       } else{
         borders_div.append("No borders")
       }
