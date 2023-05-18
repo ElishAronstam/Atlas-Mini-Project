@@ -5,6 +5,15 @@ header{
     background: none;
     
 }
+#id_flag{
+    height: 200px !important;
+    width: 300px !important;
+}
+#id_flag img{
+    height: 100% !important;
+    width:100% !important;
+    object-fit:cover;
+}
 
 header .btn:hover{
 background-color: white;

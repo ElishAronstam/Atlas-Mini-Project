@@ -23,8 +23,8 @@ export default class Country {
         div.className = "singleCont col-md-8 mx-auto p-4 overflow-hidden bg-white";
         document.querySelector(this.parent).append(div);
         div.innerHTML += `
-        <div class="col-6 float-end ms-4" style="width:250;height:250">
-          <img src="${this.flag}" alt="${this.name}" style="width:100%;height:100%">
+        <div class=" col-6 float-end my-4" id="id_flag">
+          <img src="${this.flag}" alt="${this.name}">
         </div>
         <h2>${this.name}</h2>
         <div>Population: ${this.pop} </div>
