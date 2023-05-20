@@ -34,6 +34,36 @@
        #map{
            width: 382px!important;
        }
+       #id_flag{
+        height: 150px !important;
+        width: 65% !important;
+    }
+
+       
    
       
+   }
+
+   @media (max-width:768px) {
+    #id_flag{
+        height: 150px !important;
+        width: 50% !important;
+    }
+    #map{
+        width: 250px!important;
+        height: 350px !important;
+    }
+}
+
+   
+   @media (max-width:550px) {
+    #id_flag{
+        height: 100px !important;
+        width: 50% !important;
+    }
+    #map{
+        width: 200px!important;
+        height: 300px !important;
+    }
+
    }
